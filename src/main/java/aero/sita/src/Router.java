@@ -10,11 +10,10 @@ import org.springframework.messaging.MessageChannel;
 
 /**
  * Router used for navigating to appropriate channel
- * @author puneet.nigam
  *
  */
 public class Router extends AbstractMessageRouter {
-    
+
     /** LOGGER */
     private static final Logger LOGGER = Logger.getLogger(Router.class);
     /** header file name. */
@@ -23,14 +22,14 @@ public class Router extends AbstractMessageRouter {
     private static final String MSG_RECEIVED = "%s received. Content: %s";
     /** constant for message sent. */
     private static final String MSG_SENT = "File %s is sending to Channel: %s";
-    
+
     /**  channel for output file */
     private MessageChannel outputChannel;
     /**  channel for processed file */
     private MessageChannel processedChannel;
     /**  channel for problem file  */
     private MessageChannel problemChannel;
-    
+
     public void setOutputChannel(MessageChannel outputChannel) {
         this.outputChannel = outputChannel;
     }
@@ -59,7 +58,7 @@ public class Router extends AbstractMessageRouter {
         LOGGER.info(String.format(MSG_SENT, fileName, targetChannels));
         return targetChannels;
     }
-    
+
     /**
      * Method for finding the channel.
      * @param content , not null.

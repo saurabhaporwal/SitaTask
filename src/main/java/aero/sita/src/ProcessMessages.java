@@ -5,8 +5,8 @@ import org.springframework.messaging.Message;
 
 /**
  * Process Messages for the output and create message with new content.
- * 
- * @author puneet.nigam
+ *
+
  *
  */
 public class ProcessMessages {
